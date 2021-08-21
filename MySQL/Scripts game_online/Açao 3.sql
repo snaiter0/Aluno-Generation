@@ -1,0 +1,1 @@
+select * from tb_personagem where ataque >2000; // filtra atq + 2000

@@ -1,0 +1,1 @@
+select * from funcionaries where salario > 2000

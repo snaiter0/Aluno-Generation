@@ -1,0 +1,1 @@
+UPDATE rh.funcionaries SET Salario = '6500' where id = 4; 
