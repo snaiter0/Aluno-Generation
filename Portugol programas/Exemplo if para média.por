@@ -5,7 +5,7 @@ programa
 	funcao inicio()
 	{
 	real nota1,nota2,nota3,media
-	escreva("zzzZ")
+	// escreva("zzzZ")
 	escreva("\nEntre com a primeira nota: ")
 	leia(nota1)
 	escreva("\nEntre com a segunda nota: ")
