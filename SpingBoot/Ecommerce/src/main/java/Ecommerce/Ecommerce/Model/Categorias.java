@@ -5,19 +5,19 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "Categorias")
-public class Categorias 
+public class Categorias  
 {
 	private @Id @GeneratedValue(strategy = GenerationType.IDENTITY) Long idCategoria;
-	private @NotBlank @Size(min=5 ,max=40) String Casa_e_Construcao;
-	private @NotBlank @Size(min=5 ,max=40) String Para_Levar;
-	private @NotBlank @Size(min=5 ,max=40) String Jardinagem;
-	private @NotBlank @Size(min=5 ,max=40) String Culinaria;
-	private @NotBlank @Size(min=5 ,max=40) String Higiene_e_Costimeticos;
+	private @Valid @NotNull Boolean casaeConstrucao;
+	private @Valid @NotNull Boolean paraLevar;
+	private @Valid @NotNull Boolean jardinagem;
+	private @Valid @NotNull Boolean culinaria;
+	private @Valid @NotNull Boolean higieneeCostimeticos;
 	
 	
 	
@@ -27,35 +27,35 @@ public class Categorias
 	public void setIdCategoria(Long idCategoria) {
 		this.idCategoria = idCategoria;
 	}
-	public String getCasa_e_Construcao() {
-		return Casa_e_Construcao;
+	public Boolean getcasa_e_Construcao() {
+		return casaeConstrucao;
 	}
-	public void setCasa_e_Construcao(String casa_e_Construcao) {
-		Casa_e_Construcao = casa_e_Construcao;
+	public void setcasa_e_Construcao(Boolean casaeConstrucao) {
+		this.casaeConstrucao = casaeConstrucao;
 	}
-	public String getPara_Levar() {
-		return Para_Levar;
+	public Boolean getpara_Levar() {
+		return paraLevar;
 	}
-	public void setPara_Levar(String para_Levar) {
-		Para_Levar = para_Levar;
+	public void setpara_Levar(Boolean paraLevar) {
+		this.paraLevar = paraLevar;
 	}
-	public String getJardinagem() {
-		return Jardinagem;
+	public Boolean getjardinagem() {
+		return jardinagem;
 	}
-	public void setJardinagem(String jardinagem) {
-		Jardinagem = jardinagem;
+	public void setjardinagem(Boolean jardinagem) {
+		this.jardinagem = jardinagem;
 	}
-	public String getCulinaria() {
-		return Culinaria;
+	public Boolean getculinaria() {
+		return culinaria;
 	}
-	public void setCulinaria(String culinaria) {
-		Culinaria = culinaria;
+	public void setculinaria(Boolean culinaria) {
+		this.culinaria = culinaria;
 	}
-	public String getHigiene_e_Costimeticos() {
-		return Higiene_e_Costimeticos;
+	public Boolean gethigiene_e_Costimeticos() {
+		return higieneeCostimeticos;
 	}
-	public void setHigiene_e_Costimeticos(String higiene_e_Costimeticos) {
-		Higiene_e_Costimeticos = higiene_e_Costimeticos;
+	public void sethigiene_e_Costimeticos(Boolean higieneeCostimeticos) {
+		this.higieneeCostimeticos = higieneeCostimeticos;
 	}
 	
 	

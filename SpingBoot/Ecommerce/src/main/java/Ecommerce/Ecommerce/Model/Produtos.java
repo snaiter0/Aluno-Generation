@@ -5,8 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.NotBlank;
 
 
 @Entity
@@ -14,15 +13,15 @@ import javax.validation.constraints.Size;
 public class Produtos 
 {
 	
-	private @Id @GeneratedValue(strategy = GenerationType.IDENTITY) long idProduto;
-	private @NotNull @Size (min=3,max=8) String Nome;
-	private @NotNull @Size(min=3,max=8) String Marca;
-	private @NotNull @Size (min=3,max=8)float preco;
-	private @NotNull @Size(min=5,max=500) String Descricao;
-	private @NotNull @Size(min=2,max=6) float Tamanho;
+	private @Id @GeneratedValue(strategy = GenerationType.IDENTITY) Long idProduto;
+	private @NotBlank String Nome;
+	private @NotBlank String Marca;
+	private @NotBlank Float preco;
+	private @NotBlank String descricao;
+	private @NotBlank Float Tamanho;
 	
 	
-	
+	 
 	public String getNome() {
 		return Nome;
 	}
@@ -32,14 +31,14 @@ public class Produtos
 	public float getPreco() {
 		return preco;
 	}
-	public void setPreco(float preco) {
+	public void setPreco(Float preco) {
 		this.preco = preco;
 	}
-	public String getDescricao() {
-		return Descricao;
+	public String getdescricao() {
+		return descricao;
 	}
-	public void setDescricao(String descricao) {
-		Descricao = descricao;
+	public void setdescricao(String descricao) {
+		this.descricao = descricao;
 	}
 	public String getMarca() {
 		return Marca;
@@ -50,8 +49,14 @@ public class Produtos
 	public float getTamanho() {
 		return Tamanho;
 	}
-	public void setTamanho(float tamanho) {
+	public void setTamanho(Float tamanho) {
 		Tamanho = tamanho;
+	}
+	public Long getIdProduto() {
+		return idProduto;
+	}
+	public void setIdProduto(Long idProduto) {
+		this.idProduto = idProduto;
 	}
 	
 	
