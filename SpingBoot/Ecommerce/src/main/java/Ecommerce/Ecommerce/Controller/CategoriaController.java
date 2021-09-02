@@ -41,7 +41,7 @@ public class CategoriaController
 	{
 		return ResponseEntity.status(200).body(repositorio.findAll());
 	}
-
+ 
 	@GetMapping("/Busca/ID/{BuscaID}")
 	public ResponseEntity<Optional<Categorias>> pegarPorID(@Valid @PathVariable(value = "BuscaID") Long BuscaID )
 	{
@@ -64,5 +64,11 @@ public class CategoriaController
 		}else {
 			return ResponseEntity.status(206).build();		
 			}
-}
+} 
+	
+	@GetMapping("/Pesquisa/Nome/{PegaNome}")
+	public ResponseEntity<List<Categorias>> PesquisaNome(@PathVariable(value = "PegaNome")String PegaNome)
+	{
+		return ResponseEntity.status(200).body(repositorio.findAllByNomeDaCategoriaContainingIgnoreCase(PegaNome));	
+	}
 }
