@@ -13,6 +13,7 @@ import org.springframework.stereotype.Repository;
 	{
 		public Optional<Usuario> findByUsuario (String usuario);
 		List<Usuario> findAllByusuarioContainingIgnoreCase(String usuario);
+		Optional<Usuario> findByUsuarioContainingIgnoreCase(String usuario);
 }
 
 
