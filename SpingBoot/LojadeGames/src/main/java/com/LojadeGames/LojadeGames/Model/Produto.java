@@ -21,11 +21,7 @@ public class Produto
 	private @NotBlank String nome;
 	private @NonNull Float preco;
 	private @NotBlank String descricao;
-	
-	
-	
-	
-	
+
 	@ManyToOne
 	@JsonIgnoreProperties({"categoriasrelacionadas"})
 	@JoinColumn(name = "Classe_ID")
