@@ -1,6 +1,7 @@
 package org.generation.BlogPessoal.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.validation.Valid;
 
@@ -24,13 +25,7 @@ public class TemaController
 {
 
 	@Autowired
-	public TemaRepository Repositorio;
-	
-	public String BoasVindas()
-	{
-		return "Temas:<br>"
-				+ "digite /";
-	}
+	private TemaRepository Repositorio;
 	
 	@GetMapping("/Todes")
 	public ResponseEntity<List<Tema>> PegarTodos()
@@ -41,7 +36,7 @@ public class TemaController
 	@GetMapping("/TemaID/{TemaId}")
 	public ResponseEntity<Tema> PegarTemaPorId(@PathVariable(value = "TemaId")Long idTema)
 	{
-		java.util.Optional<Tema> ObjectTema =Repositorio.findById(idTema);
+		Optional<Tema> ObjectTema =Repositorio.findById(idTema);
 		
 		if(ObjectTema.isEmpty())
 		{
@@ -49,7 +44,6 @@ public class TemaController
 		}else {
 			return ResponseEntity.status(204).build();
 		}
-		
 	}
 	
 	@PostMapping ("/Salvar")
@@ -57,7 +51,6 @@ public class TemaController
 	{
 		return ResponseEntity.status(201).body(Repositorio.save(NovoTema));
 	}
-	
 	
 	@GetMapping("/BuscarPorTema/{TextTema}")
 	public Object BuscarPorTema(@Valid @PathVariable(value = "TextTema") String TextoTema)

@@ -11,9 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
-
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
@@ -24,16 +21,26 @@ public class Usuario {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idUsuario;
 	@NotBlank
-	@Size(max=200)
 	private String usuario;
 	@NotBlank
-	@Size(max=200)
 	private String email;
 	private String senha;
 	
 	@OneToMany(mappedBy = "criador", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties({"criador"})
 	private List<Postagem> minhasPostagens = new ArrayList<>();
+
+	public Usuario(Long idUsuario,String usuario, String email,
+			String senha) {
+		this.idUsuario = idUsuario;
+		this.usuario = usuario;
+		this.email = email;
+		this.senha = senha;
+	}
+	
+	public Usuario() {
+		
+	}
 
 	public Long getIdUsuario() {
 		return idUsuario;

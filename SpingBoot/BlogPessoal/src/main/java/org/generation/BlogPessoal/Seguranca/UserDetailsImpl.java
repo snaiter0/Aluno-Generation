@@ -6,6 +6,8 @@ import org.generation.BlogPessoal.Model.Usuario;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+
+
 public class UserDetailsImpl implements UserDetails {
 
 	/**
@@ -56,13 +58,13 @@ public UserDetailsImpl() {}
 	@Override
 	public boolean isCredentialsNonExpired() {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override
 	public boolean isEnabled() {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	public String getUserName() {

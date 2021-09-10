@@ -28,14 +28,14 @@ public class UsuarioService {
 	
 	public Optional<UserLogin> Logar(Optional<UserLogin> user){
 	BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-	Optional<Usuario> usuario = repository.findByusuario(user.get().getUsuario());
+	Optional<Usuario> usuario = repository.findByUsuario(user.get().getUsuario());
 
 	if(usuario.isPresent())
 	{
 		if(encoder.matches(user.get().getSenha(), usuario.get().getSenha()))
 		{
-			String auth = user.get().getUsuario()+ ":" + user.get().getSenha();
-			byte[] encodedAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII")));
+		String auth = user.get().getUsuario()+ ":" + user.get().getSenha();
+		byte[] encodedAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII")));
 		String authHeader = "Basic " + new String(encodedAuth);
 		
 		user.get().setToken(authHeader);

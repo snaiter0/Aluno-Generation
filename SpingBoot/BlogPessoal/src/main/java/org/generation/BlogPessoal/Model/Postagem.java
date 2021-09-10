@@ -36,7 +36,6 @@ public class Postagem
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date date = new java.sql.Date(System.currentTimeMillis());
 	
-	
 	@ManyToOne
 	@JoinColumn(name = "criador_id")
 	@JsonIgnoreProperties({"minhasPostagens"})
@@ -77,6 +76,30 @@ public class Postagem
 
 	public void setDate(Date date) {
 		this.date = date;
+	}
+
+	public long getIdPostagem() {
+		return idPostagem;
+	}
+
+	public void setIdPostagem(long idPostagem) {
+		this.idPostagem = idPostagem;
+	}
+
+	public Usuario getCriador() {
+		return criador;
+	}
+
+	public void setCriador(Usuario criador) {
+		this.criador = criador;
+	}
+
+	public Tema getTemaRelacionado() {
+		return temaRelacionado;
+	}
+
+	public void setTemaRelacionado(Tema temaRelacionado) {
+		this.temaRelacionado = temaRelacionado;
 	}
 	
 	
