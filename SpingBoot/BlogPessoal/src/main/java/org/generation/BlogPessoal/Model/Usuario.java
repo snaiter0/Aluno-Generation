@@ -39,7 +39,6 @@ public class Usuario {
 	}
 	
 	public Usuario() {
-		
 	}
 
 	public Long getIdUsuario() {

@@ -1,7 +1,8 @@
 package org.generation.BlogPessoal.repository;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -51,8 +52,8 @@ public class UsuarioRepositoryTest
 		@DisplayName("💿 Retorna nome")
 		public void findByRetornaNome()
 		{
-			Optional<Usuario> usuario = usuarioRepository.findByUsuario("Joaquina");
-			assertFalse(usuario.equals("Joaquina"));
+			Optional<Usuario> usuario = usuarioRepository.findByUsuario("joao");
+			assertTrue(usuario.get().equals("joao"));
 		}
 		
 		@Test
